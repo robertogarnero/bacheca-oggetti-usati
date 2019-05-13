@@ -1,0 +1,11 @@
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+</div>
+
+<form [FormGroup] = "formRegistrazione">
+  digitare user name: <br>
+  <input type = 'text' [FormControl] = formRegistrazione.controls['user']>
+  <input type = 'text' [FormControl] = formRegistrazione.controls['password']>
+</form>
