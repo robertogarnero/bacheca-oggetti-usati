@@ -6,6 +6,6 @@
 
 <form [FormGroup] = "formRegistrazione">
   digitare user name: <br>
-  <input type = 'text' [FormControl] = formRegistrazione.controls['user']>
-  <input type = 'text' [FormControl] = formRegistrazione.controls['password']>
+  <input type = 'text' [formControl] = "formRegistrazione.controls['user']">
+  <input type = 'text' [formControl] = "formRegistrazione.controls['password']">
 </form>
