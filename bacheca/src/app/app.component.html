@@ -4,7 +4,7 @@
   </h1>
 </div>
 
-<form [FormGroup] = "formRegistrazione">
+<form [formGroup] = "formRegistrazione">
   digitare user name: <br>
   <input type = 'text' [formControl] = "formRegistrazione.controls['user']">
   <input type = 'text' [formControl] = "formRegistrazione.controls['password']">
