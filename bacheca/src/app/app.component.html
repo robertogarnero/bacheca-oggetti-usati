@@ -1,11 +1,63 @@
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-</div>
 
-<form [formGroup] = "formRegistrazione">
-  digitare user name: <br>
-  <input type = 'text' [formControl] = "formRegistrazione.controls['user']">
-  <input type = 'text' [formControl] = "formRegistrazione.controls['password']">
-</form>
+<div style = "background-color: white; text-align: center" class="container">
+ <button style = "float: right" type="submit" class="btn btn-primary">Log In</button>
+ <h2 style = "text-align: center">Registrazione</h2>
+ 
+ <form style = "background-color: light-gray;" [formGroup]="myForm"
+       (ngSubmit)="onSubmit(myForm.value)"
+       class="jumbotron">
+
+   <div class="form-group">
+     <label for="nomeInput">Nome</label>
+     <input type="text"
+           id="nomeInput"
+           placeholder="Nome"
+           name="nome"
+           [formControl]="myForm.controls['nome']"
+           class="form-control">
+     <br>
+     <label for="cognomeInput">Cognome</label>
+     <input type="text"
+           id="cognomeInput"
+           placeholder="Cognome"
+           name="cognome"
+           [formControl]="myForm.controls['cognome']"
+           class="form-control">
+     <br>
+     <label for="usernameInput">User</label>
+     <input type="text"
+           id="userInput"
+           placeholder="User"
+           name="user"
+           [formControl]="myForm.controls['user']"
+           class="form-control">
+     <br>
+     <label for="passwordInput">Password</label>
+     <input type="password"
+           id="passwordInput"
+           placeholder="Password"
+           name="password"
+           [formControl]="myForm.controls['password']"
+           class="form-control">
+   </div>
+   <button type="submit" class="btn btn-primary">Registrati</button>
+   <br>
+   <br>
+   <div *ngIf="!myForm.controls['nome'].valid"
+    class="alert alert-danger">Nome non è valido
+   </div>
+   <br>
+   <div *ngIf="!myForm.controls['cognome'].valid"
+    class="alert alert-danger">Cognome non è valido
+   </div>
+   <br>
+   <div *ngIf="!myForm.controls['user'].valid"
+    class="alert alert-danger">User non è valido
+   </div>
+   <br>
+   <div *ngIf="!myForm.controls['password'].valid"
+    class="alert alert-danger">Password non è valida
+   </div>
+   <br>
+ </form>
+</div>

@@ -15,7 +15,11 @@ export class AppComponent {
   valori: Registrazione;
   
   constructor(fb: FormBuilder){
-    this.formRegistrazione = fb.group ({'user': ['', Validators.required], 'password': ['', Validators.required]})
+    this.formRegistrazione = fb.group ({
+      'user': ['', Validators.required],
+      'password': ['', Validators.required],
+      'nome': ['', Validators.required],
+      'cognome': ['', Validators.required],
+    })
   }
-  
 }

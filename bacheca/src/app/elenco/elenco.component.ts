@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Registrazione } from '../registrazione.model';
 
 @Component({
   selector: 'app-elenco',
@@ -6,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./elenco.component.css']
 })
 export class ElencoComponent implements OnInit {
-
+  @Input() user: Registrazione [];
   constructor() { }
 
   ngOnInit() {
